@@ -1,0 +1,65 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Documentation:
+  Enabled: false
+
+Layout/DotPosition:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Enabled: true
+
+Metrics/MethodLength:
+  Max: 15
+  CountComments: false
+  Enabled: true
+
+StringLiterals:
+  Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': '()'
+    '%I': '()'
+    '%r': '{}'
+    '%w': '()'
+    '%W': '()'
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/StructInheritance:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
