@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
+require 'hodlmoon'
 
-puts "When Lambo?"
+Hodlmoon::Cli.start(ARGV)

@@ -1,8 +1,6 @@
-require "hodlmoon/version"
-require 'hodlmoon/coin_market_cap_client'
+require 'hodlmoon/version'
+require 'hodlmoon/cli'
 
 module Hodlmoon
-  def self.price(coin)
-    CoinMarketCapClient.get_price(coin)
-  end
+  # Your code goes here...
 end
