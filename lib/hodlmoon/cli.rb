@@ -1,5 +1,6 @@
 require 'thor'
-require 'hodlmoon/client/coin_market_cap'
+require 'hodlmoon/client/retrieve_price'
+require 'hodlmoon/client/retrieve_list'
 
 module Hodlmoon
   class Cli < Thor
@@ -16,13 +17,13 @@ module Hodlmoon
 
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
     def price(coin, currency = 'gbp')
-      price = Hodlmoon::Client::CoinMarketCap.retrieve_price(coin, currency)
+      price = Hodlmoon::Client::RetrievePrice.call(coin, currency)
       puts "#{CURRENCY[currency.to_sym]}#{price}"
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
     def list(limit = 10, currency = 'gbp')
-      info = Hodlmoon::Client::CoinMarketCap.retrieve_info(limit, currency)
+      info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts info
     end
   end
