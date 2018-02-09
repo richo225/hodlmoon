@@ -14,10 +14,16 @@ module Hodlmoon
       puts "Hello #{name}"
     end
 
-    desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY'
-    def price(coin, currency)
+    desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
+    def price(coin, currency = 'gbp')
       price = Hodlmoon::Client::CoinMarketCap.retrieve_price(coin, currency)
       puts "#{CURRENCY[currency.to_sym]}#{price}"
+    end
+
+    desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
+    def list(limit = 10, currency = 'gbp')
+      info = Hodlmoon::Client::CoinMarketCap.retrieve_info(limit, currency)
+      puts info
     end
   end
 end

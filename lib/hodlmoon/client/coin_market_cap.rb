@@ -4,23 +4,36 @@ module Hodlmoon
   module Client
     class CoinMarketCap
       def self.retrieve_price(coin, currency)
-        new(coin, currency).retrieve_price
+        new(coin: coin, currency: currency).retrieve_price
       end
 
-      def initialize(coin, currency)
+      def self.retrieve_info(limit, currency)
+        new(limit: limit, currency: currency).retrieve_info
+      end
+
+      def initialize(limit: nil, coin: nil, currency:)
+        @limit = limit
         @coin = coin
         @currency = currency
       end
 
       def retrieve_price
-        response = HTTParty.get(uri)
+        response = HTTParty.get(price_uri)
         response.first[price_with_currency]
+      end
+
+      def retrieve_info
+        HTTParty.get(list_uri)
       end
 
       private
 
-      def uri
+      def price_uri
         "https://api.coinmarketcap.com/v1/ticker/#{@coin}/?convert=#{@currency}"
+      end
+
+      def list_uri
+        "https://api.coinmarketcap.com/v1/ticker?limit=#{@limit}&convert=#{@currency}"
       end
 
       def price_with_currency
