@@ -1,6 +1,7 @@
 require 'thor'
 require 'hodlmoon/client/retrieve_price'
 require 'hodlmoon/client/retrieve_list'
+require 'hodlmoon/table'
 
 module Hodlmoon
   class Cli < Thor
@@ -22,9 +23,9 @@ module Hodlmoon
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
-    def list(limit = 10, currency = 'gbp')
+    def list(limit = 5, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
-      puts info
+      Hodlmoon::Table.build(info)
     end
   end
 end

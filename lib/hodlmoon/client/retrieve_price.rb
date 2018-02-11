@@ -4,7 +4,7 @@ module Hodlmoon
   module Client
     class RetrievePrice < Base
       def self.call(coin, currency)
-        new(coin: coin, currency: currency).retrieve_price
+        new(coin: coin, currency: currency).call
       end
 
       def call
