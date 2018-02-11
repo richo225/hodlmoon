@@ -1,38 +1,68 @@
 # Hodlmoon
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hodlmoon`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Quickly find the price of your crypto portfolio from the comfort of your command line. When moon?
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it yourself:
 
-```ruby
-gem 'hodlmoon'
-```
+    $ gem install hodlmoon
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install hodlmoon
-
 ## Usage
 
-TODO: Write usage instructions here
+The gem comes with two methods that can be run : `price` and `list`.
 
-## Development
+### List
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Lists market data for the top coins in a specific currency. If no limit is given, the top 5 will be shown. If no currency is given, the CLI will default to `gbp`:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+hodlmoon list
+#
+O==============O========O==============O================O===================O====================O===================O
+|     name     | symbol |  price_gbp   | market_cap_gbp | percent_change_1h | percent_change_24h | percent_change_7d |
+O==============O========O==============O================O===================O====================O===================O
+|   Bitcoin    |  BTC   | 6076.719087  |  102446343662  |       +1.34       |       -0.63        |       -0.19       |
+O==============O========O==============O================O===================O====================O===================O
+|   Ethereum   |  ETH   | 609.6714501  | 59475842993.0  |       +1.31       |       -0.09        |       -1.57       |
+O==============O========O==============O================O===================O====================O===================O
+|    Ripple    |  XRP   | 0.746560517  | 29122740344.0  |       +2.1        |       +0.09        |      +23.24       |
+O==============O========O==============O================O===================O====================O===================O
+| Bitcoin Cash |  BCH   |  915.711888  | 15532419508.0  |       +1.38       |       +2.94        |       +9.73       |
+O==============O========O==============O================O===================O====================O===================O
+|   Cardano    |  ADA   | 0.2750981492 |  7132489119.0  |       +1.66       |       -3.71        |       -3.67       |
+O==============O========O==============O================O===================O====================O===================O
+
+hodlmoon list 2 eur
+#
+O==============O========O==============O================O===================O====================O===================O
+|     name     | symbol |  price_eur   | market_cap_eur | percent_change_1h | percent_change_24h | percent_change_7d |
+O==============O========O==============O================O===================O====================O===================O
+|   Bitcoin    |  BTC   | 7212.121319  |  102446343662  |       +1.34       |       -0.63        |       -0.19       |
+O==============O========O==============O================O===================O====================O===================O
+|   Ethereum   |  ETH   | 719.35410933 | 59475842993.0  |       +1.31       |       -0.09        |       -1.57       |
+O==============O========O==============O================O===================O====================O===================O
+```
+
+### Price
+
+Gets the current price of a coin in a specific currency. If no currency is given, the CLI will default to `gbp`:
+
+```ruby
+hodlmoon price ethereum
+# £608.12
+
+hodlmoon price neo usd
+# $101
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hodlmoon. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/richo225/hodlmoon. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +70,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Hodlmoon project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/hodlmoon/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Hodlmoon project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/richo225/hodlmoon/blob/master/CODE_OF_CONDUCT.md).
