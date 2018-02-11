@@ -25,7 +25,7 @@ module Hodlmoon
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
     def list(limit = 5, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
-      Hodlmoon::Table.build(info)
+      puts Hodlmoon::Table.build(info)
     end
   end
 end
