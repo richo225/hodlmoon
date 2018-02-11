@@ -14,7 +14,7 @@ module Hodlmoon
       private
 
       def uri
-        "https://api.coinmarketcap.com/v1/ticker?limit=#{@limit}&convert=#{@currency}"
+        "https://api.coinmarketcap.com/v1/ticker/?limit=#{@limit}&convert=#{@currency}"
       end
     end
   end

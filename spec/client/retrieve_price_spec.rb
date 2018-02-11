@@ -1,6 +1,6 @@
-RSpec.describe Hodlmoon::Client::CoinMarketCap do
-  describe '#retrieve_price', :vcr do
-    subject(:client) { described_class.retrieve_price('ethereum', currency) }
+RSpec.describe Hodlmoon::Client::RetrievePrice do
+  describe '#call', :vcr do
+    subject(:client) { described_class.call('ethereum', currency) }
 
     context 'with gbp' do
       let(:currency) { 'gbp' }
