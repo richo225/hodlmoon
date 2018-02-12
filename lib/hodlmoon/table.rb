@@ -38,7 +38,9 @@ module Hodlmoon
     end
 
     def filtered_info
-      @info.map { |coin| coin.slice(*headers) }
+      @info.map do |coin|
+        headers.each_with_object({}) { |k, h| h[k] = coin[k]; }
+      end
     end
 
     def colorise_yellow(string)
