@@ -2,12 +2,13 @@ require 'terminal-table'
 
 module Hodlmoon
   class Table
-    def self.build(info)
-      new(info).build
+    def self.build(info, currency)
+      new(info, currency).build
     end
 
-    def initialize(info)
+    def initialize(info, currency)
       @info = info
+      @currency = currency
     end
 
     def build
@@ -22,7 +23,13 @@ module Hodlmoon
     private
 
     def headers
-      ['name', 'symbol', 'price_gbp', 'market_cap_gbp', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d']
+      ['name',
+       'symbol',
+       "price_#{@currency}",
+       "market_cap_#{@currency}",
+       'percent_change_1h',
+       'percent_change_24h',
+       'percent_change_7d']
     end
 
     def colorised_rows
