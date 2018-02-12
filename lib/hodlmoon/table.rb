@@ -12,6 +12,7 @@ module Hodlmoon
 
     def build
       Terminal::Table.new do |t|
+        t.title =  '☾   ☾   ☾   Hodlmoon   ☽   ☽   ☽'
         t.headings = headers
         t.rows = colorised_rows
         t.style = { all_separators: true, border_x: '=', border_i: 'O', alignment: :center }
