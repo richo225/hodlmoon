@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Richard Bates']
   spec.email         = ['richo225@gmail.com']
 
-  spec.summary       = 'Write a short summary, because RubyGems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
+  spec.description   = 'A command line tool for crytocurrency data. When moon?'
+  spec.summary       = spec.description
   spec.homepage      = 'https://github.com/richo225/hodlmoon'
   spec.license       = 'MIT'
 
