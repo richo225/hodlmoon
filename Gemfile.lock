@@ -2,9 +2,9 @@ PATH
   remote: .
   specs:
     hodlmoon (0.1.1)
-      httparty
-      terminal-table
-      thor
+      httparty (~> 0.15.7)
+      terminal-table (~> 1.8.0)
+      thor (~> 0.20.0)
 
 GEM
   remote: https://rubygems.org/
@@ -67,8 +67,8 @@ DEPENDENCIES
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.52.1)
-  vcr
-  webmock
+  vcr (~> 3.0.3)
+  webmock (~> 3.2.1)
 
 BUNDLED WITH
    1.16.1
