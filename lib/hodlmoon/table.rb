@@ -23,7 +23,8 @@ module Hodlmoon
     private
 
     def headers
-      ['name',
+      ['rank',
+       'name',
        'symbol',
        "price_#{@currency}",
        "market_cap_#{@currency}",
