@@ -14,7 +14,7 @@ module Hodlmoon
     def build
       Terminal::Table.new do |t|
         t.title =  '☾   ☾   ☾   Hodlmoon   ☽   ☽   ☽'
-        t.headings = headers
+        t.headings = humanised_headings
         t.rows = rows
         t.style = { all_separators: true, border_x: '=', border_i: 'O', alignment: :center }
       end
@@ -22,7 +22,7 @@ module Hodlmoon
 
     private
 
-    def headers
+    def headings
       ['rank',
        'name',
        'symbol',
@@ -31,6 +31,12 @@ module Hodlmoon
        'percent_change_1h',
        'percent_change_24h',
        'percent_change_7d']
+    end
+
+    def humanised_headings
+      headings.map do |heading|
+        heading.tr('_', ' ').capitalize
+      end
     end
 
     def rows
@@ -43,18 +49,18 @@ module Hodlmoon
       end
     end
 
+    def filtered_info
+      @info.map do |coin|
+        headings.each_with_object({}) { |k, h| h[k] = coin[k]; }
+      end
+    end
+
     def colorise(key, value)
       return unless value
 
       case key
       when /price_.*/ then colorise_yellow(value)
       when /percent_change_.*/ then colorise_red_or_green(value)
-      end
-    end
-
-    def filtered_info
-      @info.map do |coin|
-        headers.each_with_object({}) { |k, h| h[k] = coin[k]; }
       end
     end
 

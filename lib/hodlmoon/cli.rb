@@ -5,6 +5,8 @@ require 'hodlmoon/table'
 
 module Hodlmoon
   class Cli < Thor
+    DEFAULT_LIMIT = 8
+
     CURRENCY = {
       gbp: '£',
       usd: '$',
@@ -23,7 +25,7 @@ module Hodlmoon
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
-    def list(limit = 8, currency = 'gbp')
+    def list(limit = DEFAULT_LIMIT, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts Hodlmoon::Table.build(info, currency)
     end
