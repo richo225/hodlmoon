@@ -20,7 +20,7 @@ The gem comes with two methods that can be run : `price` and `list`.
 
 Lists market data for the top coins in a specific currency. If no limit is given, the top 5 will be shown. If no currency is given, the CLI will default to `gbp`:
 
-```ruby
+```bash
 hodlmoon list
 #
 O==============O========O===============O================O===================O====================O===================O
@@ -56,7 +56,7 @@ O==========O========O===============O================O===================O======
 
 Gets the current price of a coin in a specific currency. If no currency is given, the CLI will default to `gbp`:
 
-```ruby
+```bash
 hodlmoon price ethereum
 #
 O==========O========O===============O================O===================O====================O===================O
