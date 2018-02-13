@@ -15,7 +15,7 @@ module Hodlmoon
       Terminal::Table.new do |t|
         t.title =  '☾   ☾   ☾   Hodlmoon   ☽   ☽   ☽'
         t.headings = headers
-        t.rows = colorised_rows
+        t.rows = rows
         t.style = { all_separators: true, border_x: '=', border_i: 'O', alignment: :center }
       end
     end
@@ -32,17 +32,23 @@ module Hodlmoon
        'percent_change_7d']
     end
 
-    def colorised_rows
-      rows.each do |row|
-        colorise_yellow(row[2])
-        row[-1].include?('-') ? colorise_red(row[-1]) : colorise_green(row[-1])
-        row[-2].include?('-') ? colorise_red(row[-2]) : colorise_green(row[-2])
-        row[-3].include?('-') ? colorise_red(row[-3]) : colorise_green(row[-3])
+    def rows
+      colorised_info.map(&:values)
+    end
+
+    def colorised_info
+      filtered_info.map do |coin|
+        coin.each_pair(&method(:colorise))
       end
     end
 
-    def rows
-      filtered_info.map(&:values)
+    def colorise(key, value)
+      return unless value
+
+      case key
+      when /price_.*/ then colorise_yellow(value)
+      when /percent_change_.*/ then colorise_red_or_green(value)
+      end
     end
 
     def filtered_info
@@ -53,6 +59,10 @@ module Hodlmoon
 
     def colorise_yellow(string)
       string.prepend("\e[33m").concat("\e[0m")
+    end
+
+    def colorise_red_or_green(string)
+      string.include?('-') ? colorise_red(string) : colorise_green(string)
     end
 
     def colorise_red(string)
