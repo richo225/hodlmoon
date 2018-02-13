@@ -18,12 +18,12 @@ module Hodlmoon
 
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
     def price(coin, currency = 'gbp')
-      price = Hodlmoon::Client::RetrievePrice.call(coin, currency)
-      puts "#{CURRENCY[currency.to_sym]}#{price}"
+      info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
+      puts Hodlmoon::Table.build(info, currency)
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
-    def list(limit = 5, currency = 'gbp')
+    def list(limit = 8, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts Hodlmoon::Table.build(info, currency)
     end

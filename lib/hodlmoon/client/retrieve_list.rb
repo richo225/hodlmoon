@@ -7,10 +7,6 @@ module Hodlmoon
         new(limit: limit, currency: currency).call
       end
 
-      def call
-        HTTParty.get(uri)
-      end
-
       private
 
       def uri

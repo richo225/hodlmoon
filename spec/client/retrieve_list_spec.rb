@@ -1,5 +1,3 @@
-require 'pry'
-
 RSpec.describe Hodlmoon::Client::RetrieveList do
   describe '#call', :vcr do
     subject(:client) { described_class.call(12, currency) }

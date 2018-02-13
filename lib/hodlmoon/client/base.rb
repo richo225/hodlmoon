@@ -10,7 +10,7 @@ module Hodlmoon
       end
 
       def call
-        raise NotImplementedError
+        HTTParty.get(uri)
       end
 
       private
