@@ -1,5 +1,13 @@
 # Hodlmoon
 
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0x5aa9a264fF5516E615eB60b43d524F04c13a331e)](https://en.cryptobadges.io/donate/0x5aa9a264fF5516E615eB60b43d524F04c13a331e)
+
+[![Gem Version](https://badge.fury.io/rb/hodlmoon.svg)](https://badge.fury.io/rb/hodlmoon)
+[![CircleCI](https://circleci.com/gh/richo225/hodlmoon/tree/master.svg?style=shield)](https://circleci.com/gh/richo225/hodlmoon/tree/master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/richo225/hodlmoon.svg)](https://gemnasium.com/github.com/richo225/hodlmoon)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c328ff2b6d581e5121fc/maintainability)](https://codeclimate.com/github/richo225/hodlmoon/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/richo225/hodlmoon/badge.svg?branch=circle)](https://coveralls.io/github/richo225/hodlmoon?branch=circle)
+
 Quickly find the price of your crypto portfolio from the comfort of your command line.
 
 When moon?
@@ -91,3 +99,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Hodlmoon project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/richo225/hodlmoon/blob/master/CODE_OF_CONDUCT.md).
+
+[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
