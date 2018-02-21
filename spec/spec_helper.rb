@@ -5,6 +5,7 @@ require 'bundler/setup'
 require 'hodlmoon'
 require 'webmock/rspec'
 require 'vcr'
+require 'aruba'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
@@ -20,6 +21,8 @@ RSpec.configure do |config|
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+
+  config.include Aruba::Api
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
