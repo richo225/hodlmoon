@@ -21,7 +21,12 @@ module Hodlmoon
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
     def price(coin, currency = 'gbp')
       info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
-      puts Hodlmoon::Table.build(info, currency)
+
+      if info.success?
+        puts Hodlmoon::Table.build(info, currency)
+      else
+        puts 'Please input the full name of a valid coin.'
+      end
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
