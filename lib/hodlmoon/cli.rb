@@ -3,6 +3,7 @@ require 'launchy'
 require 'hodlmoon/client/retrieve_price'
 require 'hodlmoon/client/retrieve_list'
 require 'hodlmoon/table'
+require 'hodlmoon/portfolio_manager'
 
 module Hodlmoon
   class Cli < Thor
@@ -31,6 +32,14 @@ module Hodlmoon
     map %w(-t --trader) => :trader
     def trader
       Launchy.open(ETHTRADER_URL)
+    end
+
+    desc 'portfolio PATH CURRENCY', 'Get data for your portfolio at csv PATH'
+    map %w(-p --portfolio) => :portfolio
+    def portfolio(path, currency = 'gbp')
+      raise Error, 'No such file exists' unless File.exist?(path)
+      info = Hodlmoon::PortfolioManager.import_portfolio(path, currency)
+      puts Hodlmoon::Table.build(info, currency)
     end
 
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
