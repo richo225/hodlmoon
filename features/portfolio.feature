@@ -42,7 +42,7 @@ Feature: Portfolio
 
   Scenario: File doesn't exist
     When I run `hodlmoon portfolio Documents/my_portfolio.yml`
-    Then the output should contain "No such file exists"
+    Then the output should contain "No such file exists at Documents/my_portfolio.yml"
 
   Scenario: No file provided
     When I run `hodlmoon portfolio`
