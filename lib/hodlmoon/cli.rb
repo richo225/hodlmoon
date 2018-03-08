@@ -1,4 +1,5 @@
 require 'thor'
+require 'launchy'
 require 'hodlmoon/client/retrieve_price'
 require 'hodlmoon/client/retrieve_list'
 require 'hodlmoon/table'
@@ -6,12 +7,8 @@ require 'hodlmoon/table'
 module Hodlmoon
   class Cli < Thor
     DEFAULT_LIMIT = 8
-
-    CURRENCY = {
-      gbp: '£',
-      usd: '$',
-      eur: '€'
-    }.freeze
+    COINSPECTATOR_URL = 'https://coinspectator.com/'.freeze
+    ETHTRADER_URL = 'https://www.reddit.com/r/ethtrader/'.freeze
 
     desc 'hello NAME', 'say hello to NAME'
     def hello(name)
@@ -33,6 +30,16 @@ module Hodlmoon
     def list(limit = DEFAULT_LIMIT, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts Hodlmoon::Table.build(info, currency)
+    end
+
+    desc 'news', 'link to CoinSpectator'
+    def news
+      Launchy.open(COINSPECTATOR_URL)
+    end
+
+    desc 'trader', 'link to r/EthTrader'
+    def trader
+      Launchy.open(ETHTRADER_URL)
     end
   end
 end
