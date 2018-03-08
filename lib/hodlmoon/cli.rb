@@ -15,7 +15,26 @@ module Hodlmoon
       puts "Hello #{name}"
     end
 
+    desc 'version', 'Display hodlmoon version'
+    map %w(-v --version) => :version
+    def version
+      say "Hodlmoon #{VERSION}"
+    end
+
+    desc 'news', 'link to CoinSpectator'
+    map %w(-n --news) => :news
+    def news
+      Launchy.open(COINSPECTATOR_URL)
+    end
+
+    desc 'trader', 'link to r/EthTrader'
+    map %w(-t --trader) => :trader
+    def trader
+      Launchy.open(ETHTRADER_URL)
+    end
+
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
+    map %w(-p --price) => :price
     def price(coin, currency = 'gbp')
       info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
 
@@ -27,19 +46,10 @@ module Hodlmoon
     end
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
+    map %w(-l --list) => :list
     def list(limit = DEFAULT_LIMIT, currency = 'gbp')
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts Hodlmoon::Table.build(info, currency)
-    end
-
-    desc 'news', 'link to CoinSpectator'
-    def news
-      Launchy.open(COINSPECTATOR_URL)
-    end
-
-    desc 'trader', 'link to r/EthTrader'
-    def trader
-      Launchy.open(ETHTRADER_URL)
     end
   end
 end
