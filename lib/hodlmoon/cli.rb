@@ -10,6 +10,7 @@ module Hodlmoon
     DEFAULT_LIMIT = 8
     COINSPECTATOR_URL = 'https://coinspectator.com/'.freeze
     ETHTRADER_URL = 'https://www.reddit.com/r/ethtrader/'.freeze
+    DEFAULT_PORTFOLIO_PATH = '~/hodlmoon_portfolio'.freeze
 
     def self.exit_on_failure?
       true
@@ -38,12 +39,28 @@ module Hodlmoon
       Launchy.open(ETHTRADER_URL)
     end
 
+    desc 'create_portfolio', 'create your coin portfolio'
+    def create_portfolio
+      say "Creating file at #{DEFAULT_PORTFOLIO}"
+      @coins = []
+      loop do
+        coin = ask("Please input your coins eg.'ethereum' :")
+        break if coin.empty?
+
+        @coins << coin
+      end
+      CSV.open(DEFAULT_PORTFOLIO_PATH, 'wb') do |csv|
+        csv << @coins
+      end
+      say 'Portfolio successfully created'
+    end
+
     desc 'portfolio PATH CURRENCY', 'Get data for your portfolio at csv PATH'
     map %w(-p --portfolio) => :portfolio
     def portfolio(path, currency = 'gbp')
       raise Error, set_color("No such file exists at #{path}", :red) unless File.exist?(path)
-      info = Hodlmoon::PortfolioManager.import_portfolio(path, currency)
 
+      info = Hodlmoon::PortfolioManager.import_portfolio(path, currency)
       puts Hodlmoon::Table.build(info, currency)
     end
 
