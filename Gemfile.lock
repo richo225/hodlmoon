@@ -53,7 +53,7 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    ffi (1.9.21)
+    ffi (1.9.25)
     gherkin (5.0.0)
     hashdiff (0.3.7)
     http-cookie (1.0.3)
