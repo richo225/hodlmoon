@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'httparty', '>= 0.15.7', '< 0.18.0'
   spec.add_dependency 'launchy', '~> 2.4.3'
   spec.add_dependency 'terminal-table', '~> 1.8.0'
-  spec.add_dependency 'thor', '~> 0.20.0'
+  spec.add_dependency 'thor', '>= 0.20', '< 1.1'
 
   spec.add_development_dependency 'aruba', '~> 0.14.2'
   spec.add_development_dependency 'bundler', '~> 1.16'
