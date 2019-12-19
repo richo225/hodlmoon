@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/hodlmoon
+    docker:
+      - image: circleci/ruby:2.3.6
+    steps:
+      - checkout
+
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: hodlmoon-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: hodlmoon-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Run unit tests
+      - run: bundle exec rspec
+
+      # Run aruba tests
+      - run: bundle exec cucumber
