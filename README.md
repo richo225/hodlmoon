@@ -4,7 +4,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/hodlmoon.svg)](https://badge.fury.io/rb/hodlmoon)
 [![CircleCI](https://circleci.com/gh/richo225/hodlmoon/tree/master.svg?style=shield)](https://circleci.com/gh/richo225/hodlmoon/tree/master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/richo225/hodlmoon.svg)](https://gemnasium.com/github.com/richo225/hodlmoon)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c328ff2b6d581e5121fc/maintainability)](https://codeclimate.com/github/richo225/hodlmoon/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/richo225/hodlmoon/badge.svg?branch=circle)](https://coveralls.io/github/richo225/hodlmoon?branch=circle)
 
