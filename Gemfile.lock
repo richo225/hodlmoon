@@ -121,7 +121,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.6.0)
-    vcr (5.0.0)
+    vcr (6.0.0)
     webmock (3.2.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -140,7 +140,7 @@ DEPENDENCIES
   rspec (~> 3.0)
   rspec_junit_formatter (~> 0.4.1)
   rubocop (~> 0.78.0)
-  vcr (~> 5.0.0)
+  vcr (~> 6.0.0)
   webmock (~> 3.2.1)
 
 BUNDLED WITH
