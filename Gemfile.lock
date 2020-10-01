@@ -10,8 +10,8 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     aruba (0.14.3)
       childprocess (~> 0.8.0)
       contracts (~> 0.9)
@@ -31,8 +31,7 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
-    crack (0.4.3)
-      safe_yaml (~> 1.0.0)
+    crack (0.4.4)
     cucumber (3.1.0)
       builder (>= 2.1.2)
       cucumber-core (~> 3.1.0)
@@ -55,7 +54,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.9.25)
     gherkin (5.0.0)
-    hashdiff (0.3.7)
+    hashdiff (1.0.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.17.3)
@@ -75,7 +74,7 @@ GEM
     parallel (1.19.1)
     parser (2.6.5.0)
       ast (~> 2.4.0)
-    public_suffix (3.0.2)
+    public_suffix (4.0.6)
     rainbow (3.0.0)
     rake (13.0.1)
     rest-client (2.0.2)
@@ -105,7 +104,6 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
-    safe_yaml (1.0.4)
     simplecov (0.15.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -122,10 +120,10 @@ GEM
     unf_ext (0.0.7.5)
     unicode-display_width (1.6.0)
     vcr (5.0.0)
-    webmock (3.2.1)
+    webmock (3.9.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-      hashdiff
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -141,7 +139,7 @@ DEPENDENCIES
   rspec_junit_formatter (~> 0.4.1)
   rubocop (~> 0.78.0)
   vcr (~> 5.0.0)
-  webmock (~> 3.2.1)
+  webmock (~> 3.9.1)
 
 BUNDLED WITH
    1.17.3
