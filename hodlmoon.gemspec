@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.4.1'
-  spec.add_development_dependency 'rubocop', '~> 0.78.0'
+  spec.add_development_dependency 'rubocop', '~> 1.18.4'
   spec.add_development_dependency 'vcr', '~> 5.0.0'
   spec.add_development_dependency 'webmock', '~> 3.2.1'
 end
