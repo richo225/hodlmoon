@@ -79,6 +79,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.5)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -134,6 +135,7 @@ DEPENDENCIES
   cucumber (>= 3.0)
   hodlmoon!
   rake (~> 13.0)
+  rexml (~> 3.2, >= 3.2.4)
   rspec (~> 3.0)
   rspec_junit_formatter (~> 0.4.1)
   rubocop (~> 0.78.0)
