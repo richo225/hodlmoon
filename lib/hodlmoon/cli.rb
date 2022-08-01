@@ -8,6 +8,7 @@ require 'hodlmoon/portfolio_manager'
 module Hodlmoon
   class Cli < Thor
     DEFAULT_LIMIT = 8
+    DEFAULT_CURRENCY = 'gbp'.freeze
     COINSPECTATOR_URL = 'https://coinspectator.com/'.freeze
     ETHTRADER_URL = 'https://www.reddit.com/r/ethtrader/'.freeze
     DEFAULT_PORTFOLIO_PATH = '~/hodlmoon_portfolio'.freeze
@@ -57,7 +58,7 @@ module Hodlmoon
 
     desc 'portfolio PATH CURRENCY', 'Get data for your portfolio at csv PATH'
     map %w(-p --portfolio) => :portfolio
-    def portfolio(path, currency = 'gbp')
+    def portfolio(path, currency = DEFAULT_CURRENCY)
       raise Error, set_color("No such file exists at #{path}", :red) unless File.exist?(path)
 
       info = Hodlmoon::PortfolioManager.import_portfolio(path, currency)
@@ -66,7 +67,7 @@ module Hodlmoon
 
     desc 'price COIN CURRENCY', 'get current price of COIN in CURRENCY(optional)'
     map %w(-p --price) => :price
-    def price(coin, currency = 'gbp')
+    def price(coin, currency = DEFAULT_CURRENCY)
       info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
       raise Error, set_color('Please input the full name of a valid coin.', :red) unless info.success?
 
@@ -75,7 +76,7 @@ module Hodlmoon
 
     desc 'list LIMIT CURRENCY', 'get LIMIT of top coins in CURRENCY(optional)'
     map %w(-l --list) => :list
-    def list(limit = DEFAULT_LIMIT, currency = 'gbp')
+    def list(limit = DEFAULT_LIMIT, currency = DEFAULT_CURRENCY)
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
       puts Hodlmoon::Table.build(info, currency)
     end
