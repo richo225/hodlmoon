@@ -1,6 +1,3 @@
-require 'coveralls'
-Coveralls.wear!
-
 require 'bundler/setup'
 require 'hodlmoon'
 require 'webmock/rspec'
