@@ -10,7 +10,7 @@ module Hodlmoon
       end
 
       def call
-        HTTParty.get(uri)
+        HTTParty.get(uri, format: :json)
       end
 
       private

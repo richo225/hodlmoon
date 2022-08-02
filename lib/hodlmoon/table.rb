@@ -23,14 +23,13 @@ module Hodlmoon
     private
 
     def headings
-      ['rank',
+      ['market_cap_rank',
        'name',
        'symbol',
-       "price_#{@currency}",
-       "market_cap_#{@currency}",
-       'percent_change_1h',
-       'percent_change_24h',
-       'percent_change_7d']
+       'current_price',
+       'market_cap',
+       'price_change_percentage_24h',
+       'ath_change_percentage']
     end
 
     def humanised_headings
@@ -45,7 +44,8 @@ module Hodlmoon
 
     def colorised_info
       filtered_info.map do |coin|
-        coin.each_pair(&method(:colorise))
+        coin.transform_values!(&:to_s)
+            .each_pair { |k, v| colorise(k, v) }
       end
     end
 
@@ -59,8 +59,8 @@ module Hodlmoon
       return unless value
 
       case key
-      when /price_.*/ then colorise_yellow(value)
-      when /percent_change_.*/ then colorise_red_or_green(value)
+      when /_price_.*/ then colorise_yellow(value)
+      when /_percentage.*/ then colorise_red_or_green(value)
       end
     end
 

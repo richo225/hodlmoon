@@ -10,7 +10,7 @@ module Hodlmoon
       private
 
       def uri
-        "https://api.coinmarketcap.com/v1/ticker/#{@coin}/?convert=#{@currency}"
+        "https://api.coingecko.com/api/v3/coins/#{@coin}?community_data=false&developer_data=false&localization=false"
       end
     end
   end
