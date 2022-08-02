@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hodlmoon (0.1.3)
+    hodlmoon (0.2.0)
       httparty (= 0.18.0)
       json (~> 2.6, >= 2.6.2)
       launchy (~> 2.4.3)
