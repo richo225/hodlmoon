@@ -1,5 +1,4 @@
-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hodlmoon/version'
 
@@ -35,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.4.1'
   spec.add_development_dependency 'rubocop', '~> 0.78.0'
   spec.add_development_dependency 'vcr', '~> 5.0.0'
-  spec.add_development_dependency 'webmock', '~> 3.5.0'
+  spec.add_development_dependency 'webmock', '~> 3.8.0'
 end
