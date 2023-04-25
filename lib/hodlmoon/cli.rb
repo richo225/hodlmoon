@@ -69,7 +69,7 @@ module Hodlmoon
     map %w(-p --price) => :price
     def price(coin, currency = DEFAULT_CURRENCY)
       info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
-      raise Error, set_color('Please input the full name of a valid coin.', :red) unless info.success?
+      raise Error, set_color('Please input the full name of a valid coin.', :red) if !info.success? || info.empty?
 
       puts Hodlmoon::Table.build(info, currency)
     end
