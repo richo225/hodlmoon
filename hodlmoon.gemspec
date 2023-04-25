@@ -3,7 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hodlmoon/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'hodlmoon'
+  spec.name = 'hodlmoon'
+  spec.required_ruby_version = Hodlmoon::RUBY_VERSION
   spec.version       = Hodlmoon::VERSION
   spec.authors       = ['Richard Bates']
   spec.email         = ['richo225@gmail.com']
@@ -26,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor', '>= 1.0', '< 1.1'
 
   spec.add_development_dependency 'aruba', '~> 1.0.0'
-  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'cucumber', '>= 3.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rexml', '~> 3.2', '>= 3.2.4'

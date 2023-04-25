@@ -103,7 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   aruba (~> 1.0.0)
-  bundler (~> 1.16)
+  bundler (~> 1.17.3)
   cucumber (>= 3.0)
   hodlmoon!
   rake (~> 13.0)
