@@ -69,7 +69,7 @@ module Hodlmoon
     map %w(-p --price) => :price
     def price(coin, currency = DEFAULT_CURRENCY)
       info = Hodlmoon::Client::RetrievePrice.call(coin, currency)
-      raise Error, set_color('Please input the full name of a valid coin.', :red) unless info.success?
+      raise_info_error(info)
 
       puts Hodlmoon::Table.build(info, currency)
     end
@@ -78,7 +78,16 @@ module Hodlmoon
     map %w(-l --list) => :list
     def list(limit = DEFAULT_LIMIT, currency = DEFAULT_CURRENCY)
       info = Hodlmoon::Client::RetrieveList.call(limit, currency)
+      raise_info_error(info)
+
       puts Hodlmoon::Table.build(info, currency)
+    end
+
+    private
+
+    def raise_info_error(info)
+      raise Error, set_color('Sorry, the rate limit has been exceeded', :red) if info.response.code == '429'
+      raise Error, set_color('Please input the full name of a valid coin.', :red) if !info.success? || info.empty?
     end
   end
 end

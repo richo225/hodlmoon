@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coingecko.com/api/v3/coins/markets?ids=ethereum&vs_currency=gbp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Apr 2023 10:09:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - public, max-age=120
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, DELETE, GET, OPTIONS
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Access-Control-Expose-Headers:
+      - link, per-page, total
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"1fd3dc8d8df7a370d56cf8b449394fa3"
+      X-Request-Id:
+      - 78aec57e-a4e3-4fe2-b153-7cf406005f3a
+      X-Runtime:
+      - '0.003207'
+      Alternate-Protocol:
+      - 443:npn-spdy/2
+      Cf-Cache-Status:
+      - MISS
+      Expires:
+      - Tue, 25 Apr 2023 10:11:15 GMT
+      Set-Cookie:
+      - __cf_bm=nBPVBjzwq0hT7BqRXzVTVCcVEfcDbvrLolKxrAZFE8o-1682417355-0-AS1fNQ3skoE2bYR23q4ZYx+wM/rMcuFkhzMGcecbz+FqQ3RSjWmY/gi8OHn36ZIXehkKPJCsT4Roz03mucWdpw4=;
+        path=/; expires=Tue, 25-Apr-23 10:39:15 GMT; domain=.api.coingecko.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7bd5ca16a9dfa138-SIN
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"ethereum","symbol":"eth","name":"Ethereum","image":"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880","current_price":1456.68,"market_cap":175245757214,"market_cap_rank":2,"fully_diluted_valuation":175245757214,"total_volume":7033743474,"high_24h":1503.16,"low_24h":1452.08,"price_change_24h":-27.944069580431233,"price_change_percentage_24h":-1.88223,"market_cap_change_24h":-2990568008.3936157,"market_cap_change_percentage_24h":-1.67787,"circulating_supply":120406936.078253,"total_supply":120406936.078253,"max_supply":null,"ath":3610.11,"ath_change_percentage":-59.6841,"ath_date":"2021-11-12T02:17:36.494Z","atl":0.280314,"atl_change_percentage":519120.22269,"atl_date":"2015-10-20T00:00:00.000Z","roi":{"times":87.869542130822,"currency":"btc","percentage":8786.954213082201},"last_updated":"2023-04-25T10:08:25.548Z"}]'
+    http_version:
+  recorded_at: Tue, 25 Apr 2023 10:09:15 GMT
+recorded_with: VCR 5.0.0

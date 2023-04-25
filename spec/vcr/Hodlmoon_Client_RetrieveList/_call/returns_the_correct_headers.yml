@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.coingecko.com/api/v3/coins/markets?per_page=12&vs_currency=gbp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Apr 2023 10:09:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - public, max-age=120
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, DELETE, GET, OPTIONS
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Access-Control-Expose-Headers:
+      - link, per-page, total
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"caf018d83372ef7dfc24d51089b42a6a"
+      X-Request-Id:
+      - 9cb94c52-ce8d-413f-88c3-e62f123ffd8e
+      X-Runtime:
+      - '0.027350'
+      Alternate-Protocol:
+      - 443:npn-spdy/2
+      Cf-Cache-Status:
+      - MISS
+      Expires:
+      - Tue, 25 Apr 2023 10:11:15 GMT
+      Set-Cookie:
+      - __cf_bm=3d1u7tpIMawVlNe.FF0wToel0shxJedMgHtecuBwhTw-1682417355-0-AWHSIBwDnU7wZuTwc4WlxPFvRCDaSexgiLu9YS7SLRf8TRFMXbBW1+E3lPb4qBWL9qSXKhBB5yDPnPFBO3s2IH4=;
+        path=/; expires=Tue, 25-Apr-23 10:39:15 GMT; domain=.api.coingecko.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7bd5ca140d7c06ab-SIN
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"bitcoin","symbol":"btc","name":"Bitcoin","image":"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579","current_price":21914,"market_cap":424193484725,"market_cap_rank":1,"fully_diluted_valuation":460226193227,"total_volume":11676937521,"high_24h":22263,"low_24h":21812,"price_change_24h":-99.70744916713011,"price_change_percentage_24h":-0.45294,"market_cap_change_24h":-1047271907.5463867,"market_cap_change_percentage_24h":-0.24628,"circulating_supply":19355837.0,"total_supply":21000000.0,"max_supply":21000000.0,"ath":51032,"ath_change_percentage":-57.05552,"ath_date":"2021-11-10T14:24:11.849Z","atl":43.9,"atl_change_percentage":49818.7669,"atl_date":"2013-07-05T00:00:00.000Z","roi":null,"last_updated":"2023-04-25T10:09:08.860Z"},{"id":"ethereum","symbol":"eth","name":"Ethereum","image":"https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880","current_price":1456.68,"market_cap":175245757214,"market_cap_rank":2,"fully_diluted_valuation":175245757214,"total_volume":7034693552,"high_24h":1503.16,"low_24h":1452.08,"price_change_24h":-27.938096328897927,"price_change_percentage_24h":-1.88183,"market_cap_change_24h":-2990568008.3936157,"market_cap_change_percentage_24h":-1.67787,"circulating_supply":120406936.078253,"total_supply":120406936.078253,"max_supply":null,"ath":3610.11,"ath_change_percentage":-59.6841,"ath_date":"2021-11-12T02:17:36.494Z","atl":0.280314,"atl_change_percentage":519120.22269,"atl_date":"2015-10-20T00:00:00.000Z","roi":{"times":87.87060976528656,"currency":"btc","percentage":8787.060976528655},"last_updated":"2023-04-25T10:09:07.016Z"},{"id":"tether","symbol":"usdt","name":"Tether","image":"https://assets.coingecko.com/coins/images/325/large/Tether.png?1668148663","current_price":0.802255,"market_cap":65422959842,"market_cap_rank":3,"fully_diluted_valuation":65422959842,"total_volume":17281660026,"high_24h":0.807975,"low_24h":0.799799,"price_change_24h":-0.00282656664396086,"price_change_percentage_24h":-0.35109,"market_cap_change_24h":-105672542.17675018,"market_cap_change_percentage_24h":-0.16126,"circulating_supply":81538750252.4105,"total_supply":81538750252.4105,"max_supply":null,"ath":1.01,"ath_change_percentage":-20.55779,"ath_date":"2018-07-24T00:00:00.000Z","atl":0.388017,"atl_change_percentage":106.78353,"atl_date":"2015-03-02T00:00:00.000Z","roi":null,"last_updated":"2023-04-25T10:05:00.252Z"},{"id":"binancecoin","symbol":"bnb","name":"BNB","image":"https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850","current_price":264.34,"market_cap":41734281518,"market_cap_rank":4,"fully_diluted_valuation":52866254773,"total_volume":591330614,"high_24h":268.17,"low_24h":263.52,"price_change_24h":-1.4454328147357955,"price_change_percentage_24h":-0.54384,"market_cap_change_24h":-118056504.9995346,"market_cap_change_percentage_24h":-0.28208,"circulating_supply":157886280.0,"total_supply":157900174.0,"max_supply":200000000.0,"ath":497.18,"ath_change_percentage":-46.83381,"ath_date":"2021-11-07T10:13:53.906Z","atl":0.03027451,"atl_change_percentage":873014.95141,"atl_date":"2017-10-19T00:00:00.000Z","roi":null,"last_updated":"2023-04-25T10:09:11.904Z"},{"id":"usd-coin","symbol":"usdc","name":"USD
+        Coin","image":"https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389","current_price":0.802358,"market_cap":24639945020,"market_cap_rank":5,"fully_diluted_valuation":24639617247,"total_volume":3362794257,"high_24h":0.807934,"low_24h":0.798532,"price_change_24h":-0.002080503688728142,"price_change_percentage_24h":-0.25863,"market_cap_change_24h":-126848810.88147354,"market_cap_change_percentage_24h":-0.51217,"circulating_supply":30724148069.3081,"total_supply":30723739361.1181,"max_supply":null,"ath":0.96424,"ath_change_percentage":-16.82666,"ath_date":"2022-09-26T01:00:46.182Z","atl":0.629869,"atl_change_percentage":27.32653,"atl_date":"2021-05-19T13:14:05.611Z","roi":null,"last_updated":"2023-04-25T10:09:11.405Z"},{"id":"ripple","symbol":"xrp","name":"XRP","image":"https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731","current_price":0.36616,"market_cap":18943367731,"market_cap_rank":6,"fully_diluted_valuation":36604968295,"total_volume":926035087,"high_24h":0.375665,"low_24h":0.362264,"price_change_24h":-0.006988264996492023,"price_change_percentage_24h":-1.87279,"market_cap_change_24h":-283102768.822876,"market_cap_change_percentage_24h":-1.47246,"circulating_supply":51750810378.0,"total_supply":99988998998.0,"max_supply":100000000000.0,"ath":2.5,"ath_change_percentage":-85.37715,"ath_date":"2018-01-07T00:00:00.000Z","atl":0.00159246,"atl_change_percentage":22886.60623,"atl_date":"2014-05-22T00:00:00.000Z","roi":null,"last_updated":"2023-04-25T10:09:09.289Z"},{"id":"cardano","symbol":"ada","name":"Cardano","image":"https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860","current_price":0.303655,"market_cap":10648460071,"market_cap_rank":7,"fully_diluted_valuation":13673289154,"total_volume":226886204,"high_24h":0.316598,"low_24h":0.303018,"price_change_24h":-0.007553292112448817,"price_change_percentage_24h":-2.42709,"market_cap_change_24h":-215215408.13578796,"market_cap_change_percentage_24h":-1.98106,"circulating_supply":35045020830.3234,"total_supply":45000000000.0,"max_supply":45000000000.0,"ath":2.24,"ath_change_percentage":-86.44055,"ath_date":"2021-09-02T06:00:10.474Z","atl":0.01534983,"atl_change_percentage":1879.50641,"atl_date":"2020-03-13T02:22:55.044Z","roi":null,"last_updated":"2023-04-25T10:09:09.932Z"},{"id":"staked-ether","symbol":"steth","name":"Lido
+        Staked Ether","image":"https://assets.coingecko.com/coins/images/13442/large/steth_logo.png?1608607546","current_price":1451.51,"market_cap":8928996935,"market_cap_rank":8,"fully_diluted_valuation":8928996935,"total_volume":31685390,"high_24h":1502.55,"low_24h":1451.05,"price_change_24h":-29.47869239873603,"price_change_percentage_24h":-1.99048,"market_cap_change_24h":-145221529.7892723,"market_cap_change_percentage_24h":-1.60038,"circulating_supply":6151078.46767584,"total_supply":6151162.52113437,"max_supply":6151078.46767584,"ath":3587.66,"ath_change_percentage":-59.54055,"ath_date":"2021-11-12T02:16:02.325Z","atl":360.14,"atl_change_percentage":303.0553,"atl_date":"2020-12-22T04:08:21.854Z","roi":null,"last_updated":"2023-04-25T10:08:45.910Z"},{"id":"dogecoin","symbol":"doge","name":"Dogecoin","image":"https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256","current_price":0.062877,"market_cap":8753096342,"market_cap_rank":9,"fully_diluted_valuation":null,"total_volume":312264710,"high_24h":0.064214,"low_24h":0.062468,"price_change_24h":-0.000676675572841207,"price_change_percentage_24h":-1.06473,"market_cap_change_24h":-57413299.094739914,"market_cap_change_percentage_24h":-0.65165,"circulating_supply":139082416383.705,"total_supply":null,"max_supply":null,"ath":0.523116,"ath_change_percentage":-87.96925,"ath_date":"2021-05-08T05:08:23.458Z","atl":5.701e-05,"atl_change_percentage":110289.24402,"atl_date":"2015-05-06T00:00:00.000Z","roi":null,"last_updated":"2023-04-25T10:09:08.867Z"},{"id":"matic-network","symbol":"matic","name":"Polygon","image":"https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912","current_price":0.771619,"market_cap":7134286799,"market_cap_rank":10,"fully_diluted_valuation":7713185206,"total_volume":261675551,"high_24h":0.811009,"low_24h":0.770168,"price_change_24h":-0.0277679754996234,"price_change_percentage_24h":-3.47366,"market_cap_change_24h":-230955113.94941902,"market_cap_change_percentage_24h":-3.13574,"circulating_supply":9249469069.28493,"total_supply":10000000000.0,"max_supply":10000000000.0,"ath":2.18,"ath_change_percentage":-64.55593,"ath_date":"2021-12-27T02:08:34.307Z","atl":0.00241648,"atl_change_percentage":31821.32174,"atl_date":"2019-05-10T00:00:00.000Z","roi":{"times":364.8276557979026,"currency":"usd","percentage":36482.765579790255},"last_updated":"2023-04-25T10:09:14.040Z"},{"id":"solana","symbol":"sol","name":"Solana","image":"https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422","current_price":16.76,"market_cap":6577720920,"market_cap_rank":11,"fully_diluted_valuation":9145971252,"total_volume":306100259,"high_24h":17.65,"low_24h":16.69,"price_change_24h":-0.5204219334178894,"price_change_percentage_24h":-3.01206,"market_cap_change_24h":-186731929.91749954,"market_cap_change_percentage_24h":-2.76049,"circulating_supply":392768454.761387,"total_supply":546123655.813686,"max_supply":null,"ath":192.59,"ath_change_percentage":-91.30474,"ath_date":"2021-11-06T21:54:35.825Z","atl":0.406099,"atl_change_percentage":4023.69049,"atl_date":"2020-05-11T19:35:23.449Z","roi":null,"last_updated":"2023-04-25T10:09:13.985Z"},{"id":"polkadot","symbol":"dot","name":"Polkadot","image":"https://assets.coingecko.com/coins/images/12171/large/polkadot.png?1639712644","current_price":4.69,"market_cap":5742642682,"market_cap_rank":12,"fully_diluted_valuation":6122314380,"total_volume":106017675,"high_24h":4.82,"low_24h":4.66,"price_change_24h":-0.08385791033110213,"price_change_percentage_24h":-1.75621,"market_cap_change_24h":-78792400.38533878,"market_cap_change_percentage_24h":-1.35349,"circulating_supply":1224378715.95968,"total_supply":1305327848.90446,"max_supply":null,"ath":40.66,"ath_change_percentage":-88.46612,"ath_date":"2021-11-04T14:10:09.301Z","atl":2.05,"atl_change_percentage":129.26397,"atl_date":"2020-08-19T03:44:11.556Z","roi":null,"last_updated":"2023-04-25T10:09:12.305Z"}]'
+    http_version:
+  recorded_at: Tue, 25 Apr 2023 10:09:15 GMT
+recorded_with: VCR 5.0.0
