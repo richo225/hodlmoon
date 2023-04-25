@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hodlmoon (0.2.0)
+    hodlmoon (0.3.0)
       httparty (= 0.18.0)
       json (~> 2.6, >= 2.6.2)
       launchy (~> 2.4.3)
@@ -54,7 +54,7 @@ GEM
       addressable (~> 2.3)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2022.0105)
+    mime-types-data (3.2023.0218.1)
     multi_json (1.13.1)
     multi_test (0.1.2)
     multi_xml (0.6.0)
