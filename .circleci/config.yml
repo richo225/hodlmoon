@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/hodlmoon
     docker:
-      - image: circleci/ruby:2.3.6
+      - image: circleci/ruby:2.4.6
     steps:
       - checkout
 
