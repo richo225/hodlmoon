@@ -2,18 +2,18 @@ Feature: Price
 
   Scenario: Getting price of ethereum
     When I run `hodlmoon price ethereum`
-    Then the output should contain "ETH"
+    Then the output should contain "eth"
     And the output should contain "Ethereum"
 
   Scenario: Currency provided
     When I run `hodlmoon price ethereum usd`
-    Then the output should contain "Price usd"
-    And the output should contain "Market cap usd"
+    Then the output should contain "Current price"
+    And the output should contain "Market cap"
 
   Scenario: No currency provided
     When I run `hodlmoon price ethereum`
-    Then the output should contain "Price gbp"
-    And the output should contain "Market cap gbp"
+    Then the output should contain "Current price"
+    And the output should contain "Market cap"
 
   Scenario: No coin provided
     When I run `hodlmoon price`

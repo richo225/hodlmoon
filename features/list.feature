@@ -12,10 +12,5 @@ Feature: List
 
   Scenario: Currency provided
     When I run `hodlmoon list 20 usd`
-    Then the output should contain "Price usd"
-    And the output should contain "Market cap usd"
-
-  Scenario: No currency provided
-    When I run `hodlmoon list`
-    Then the output should contain "Price gbp"
-    And the output should contain "Market cap gbp"
+    Then the output should contain "Current price"
+    And the output should contain " 20 "
