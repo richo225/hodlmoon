@@ -1,11 +1,8 @@
 # Hodlmoon
 
-[![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0x5aa9a264fF5516E615eB60b43d524F04c13a331e)](https://en.cryptobadges.io/donate/0x5aa9a264fF5516E615eB60b43d524F04c13a331e)
-
 [![Gem Version](https://badge.fury.io/rb/hodlmoon.svg)](https://badge.fury.io/rb/hodlmoon)
 [![CircleCI](https://circleci.com/gh/richo225/hodlmoon/tree/master.svg?style=shield)](https://circleci.com/gh/richo225/hodlmoon/tree/master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c328ff2b6d581e5121fc/maintainability)](https://codeclimate.com/github/richo225/hodlmoon/maintainability)
-[![Coverage Status](https://coveralls.io/repos/github/richo225/hodlmoon/badge.svg?branch=circle)](https://coveralls.io/github/richo225/hodlmoon?branch=circle)
 
 Quickly find the price of your crypto portfolio from the comfort of your command line.
 
@@ -29,9 +26,7 @@ Lists market data for the top default 8 coins.
 
 <img width="956" alt="screen shot 2018-02-13 at 23 34 15" src="https://user-images.githubusercontent.com/18379191/36180073-d0fbd150-1116-11e8-8355-24af83efb03d.png">
 
-
 A specific limit and a specific currency can also be supplied. If no currency is given, the CLI will default to `gbp`.
-
 
 <img width="927" alt="screen shot 2018-02-13 at 23 34 44" src="https://user-images.githubusercontent.com/18379191/36180125-114bc8dc-1117-11e8-910e-d2bee9df72df.png">
 
