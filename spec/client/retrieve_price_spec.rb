@@ -1,6 +1,6 @@
 RSpec.describe Hodlmoon::Client::RetrievePrice do
   describe '#call', :vcr do
-    subject(:client) { described_class.call('ethereum', currency).first }
+    subject(:client) { described_class.call('ethereum', 'gbp').first }
 
     it 'returns the correct headers' do
       expect(client.keys).to include(
